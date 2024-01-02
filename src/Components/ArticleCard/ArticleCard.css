@@ -1,0 +1,49 @@
+.card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.0);
+    border-bottom: 2px solid black;
+    width: 100%;
+}
+
+.article-image {
+    height: 12em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.image-container {
+    position: relative;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .article-image {
+      width: 100%;
+      height: auto;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 1em;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .card {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .article-image {
+      width: 100%;
+      height: auto;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 1em;
+    }
+  }
