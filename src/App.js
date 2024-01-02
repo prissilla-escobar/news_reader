@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { getAllArticles, getTopArticles } from './apiCalls'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import AllArticles from './Components/AllArticles/AllArticles'
+import Header from './Components/Header/Header'
 
 function App() {
 
@@ -31,9 +32,13 @@ function App() {
       })
   }, [])
 
+  const resetError = () => {
+    setServerError({hasError: false, message: ''})
+  }
+
   return (
     <div className="App">
-      {/* <Header /> */}
+      <Header resetError={resetError} />
       <Routes>
         <Route path='/' element={<AllArticles allArticles={allArticles}/>} />
       </Routes>
