@@ -1,29 +1,68 @@
 import './AllArticles.css'
 import ArticleCard from '../ArticleCard/ArticleCard'
+import { Link } from 'react-router-dom'
 
+// function AllArticles({ topArticles }) {
 
-function AllArticles({ topArticles, setServerError }) {
+//   if (topArticles.length === 0) {
+//     return (
+//       <div className="no-articles-message">
+//         <p>Select a country in the top right to see top articles!</p>
+//       </div>
+//     )
+//   }
 
-    const articleCards = topArticles.map(article => {
-        return (
-          <ArticleCard 
-            title={article.title}
-            urlToImage={article.urlToImage}
-            publishedAt={article.publishedAt}
-            content={article.content}
-            description={article.description}
-            author={article.author}
-            url={article.url}
-            source={article.source.name}
-          />
-        )
-    })
+//     const articleCards = topArticles.map(article => {
+//         return (
+//           <Link to={`/${article.title}`} className='card-link'>
+//             <ArticleCard 
+//               title={article.title}
+//               urlToImage={article.urlToImage}
+//               publishedAt={article.publishedAt}
+//               content={article.content}
+//               description={article.description}
+//               author={article.author}
+//               url={article.url}
+//               source={article.source.name}
+//             />
+//           </Link>
+//         )
+//     })
 
+//     return (
+//         <div className='all-articles'>
+//             {articleCards}
+//         </div>
+//     )
+// }
+
+function AllArticles({ topArticles }) {
+  const articleCards = topArticles.map((article) => {
     return (
-        <div className='all-articles'>
-            {articleCards}
-        </div>
-    )
+      <Link to={`/${article.title}`} className='card-link'>
+        <ArticleCard
+          title={article.title}
+          urlToImage={article.urlToImage}
+          publishedAt={article.publishedAt}
+          content={article.content}
+          description={article.description}
+          author={article.author}
+          url={article.url}
+          source={article.source.name}
+        />
+      </Link>
+    );
+  });
+
+  return (
+    <div className='all-articles'>
+      {topArticles.length === 0 ? (
+        <div>Select a country to see top articles.</div>
+      ) : (
+        articleCards
+      )}
+    </div>
+  );
 }
 
 export default AllArticles

@@ -16,7 +16,11 @@
 
 .image-container {
     position: relative;
-  }
+}
+
+.article-info {
+  margin-right: 1em;
+}
 
   @media only screen and (max-width: 768px) {
     .card {

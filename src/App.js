@@ -1,27 +1,16 @@
 import './App.css'
 import { useState, useEffect } from 'react'
-import { getAllArticles, getTopArticles } from './apiCalls'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { getTopArticles } from './apiCalls'
+import { Route, Routes } from 'react-router-dom'
 import AllArticles from './Components/AllArticles/AllArticles'
 import Header from './Components/Header/Header'
+import ArticleDetails from './Components/ArticleDetails/ArticleDetails'
 
 function App() {
 
-  const [allArticles, setAllArticles] = useState([])
   const [topArticles, setTopArticles] = useState([])
   const [selectedCountry, setSelectedCountry] = useState('')
   const [serverError, setServerError] = useState({hasError: false, message: ''})
-
-
-  useEffect(() => {
-    getAllArticles()
-      .then(data => {
-        setAllArticles(data.articles)
-      })
-      .catch(error => {
-        setServerError({hasError: true, message: `${error.message}`})
-      })
-  }, [])
 
   const fetchTopArticles = () => {
     if (selectedCountry) {
@@ -59,7 +48,10 @@ function App() {
         <Route path='/'
           element={<AllArticles
             topArticles={topArticles}
-            setServerError={setServerError}
+          />} />
+        <Route path='/:title'
+          element={<ArticleDetails
+            topArticles={topArticles}
           />} />
       </Routes>
     </div>

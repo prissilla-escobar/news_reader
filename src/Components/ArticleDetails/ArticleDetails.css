@@ -1,0 +1,18 @@
+.selected-image {
+    height: 20em;
+}
+
+.go-home {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.home {
+    margin-top:1.5em;
+    margin-bottom: 1em;
+}
+
+.home:hover {
+    font-size: 1.3em;
+    font-weight: bolder;
+}

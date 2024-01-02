@@ -1,10 +1,12 @@
 import './Header.css'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import PropTypes from "prop-types"
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 function Header({ resetError, selectedCountry, handleCountryChange }) {
   const [isHovered, setIsHovered] = useState(false)
+  const location = useLocation()
+  const isHomePage = location.pathname === '/'
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -74,26 +76,28 @@ function Header({ resetError, selectedCountry, handleCountryChange }) {
       <Link to='/' className='home-link' onClick={() => resetError()}>
         <h1 className='logo'>Top Articles of the Day</h1>
       </Link>
-      <div className='dropdown-container'>
-        <select
-          className='dropdown'
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          value={selectedCountry}
-          onChange={handleCountryChange}
-        >
-          <option value='' disabled hidden>
-            {isHovered ? 'Change Country' : 'Country'}
-          </option>
-          {countryOptions.map((country) => (
-            <option key={country.code} value={country.code}>
-              {country.name}
+      {isHomePage && (
+        <div className="dropdown-container">
+          <select
+            className="dropdown"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            value={selectedCountry}
+            onChange={handleCountryChange}
+          >
+            <option value="" disabled hidden>
+              {isHovered ? 'Pick Country' : 'Select Country'}
             </option>
-          ))}
-        </select>
-      </div>
+            {countryOptions.map((country) => (
+              <option key={country.code} value={country.code}>
+                {country.name}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
 Header.propTypes = {
