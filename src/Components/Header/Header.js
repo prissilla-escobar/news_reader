@@ -2,12 +2,9 @@ import './Header.css'
 import { Link } from 'react-router-dom'
 import PropTypes from "prop-types"
 import { useState, useEffect } from 'react'
-import { getTopArticles } from '../../apiCalls'
 
 function Header({ resetError, selectedCountry, handleCountryChange }) {
   const [isHovered, setIsHovered] = useState(false)
-  // const [selectedCountry, setSelectedCountry] = useState('')
-  // const [selectedCountryArticles, setSelectedCountryArticles] = useState([])
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -15,22 +12,7 @@ function Header({ resetError, selectedCountry, handleCountryChange }) {
 
   const handleMouseLeave = () => {
     setIsHovered(false)
-  };
-
-  // const handleCountryChange = (event) => {
-  //   setSelectedCountry(event.target.value)
-  // }
-
-  // useEffect(() => {
-  //   getTopArticles(selectedCountry)
-  //     .then(data => {
-  //       setSelectedCountryArticles(data.articles)
-  //       console.log(data.articles)
-  //     })
-  //     .catch(error => {
-  //       setServerError({hasError: true, message: `${error.message}`})
-  //     })
-  // }, [selectedCountry])
+  }
 
   const countryOptions = [
     { code: 'ar', name: 'Argentina' },
@@ -90,7 +72,7 @@ function Header({ resetError, selectedCountry, handleCountryChange }) {
   return (
     <div className='header'>
       <Link to='/' className='home-link' onClick={() => resetError()}>
-        <h1 className='logo'>NewsReader</h1>
+        <h1 className='logo'>Top Articles of the Day</h1>
       </Link>
       <div className='dropdown-container'>
         <select
@@ -116,6 +98,6 @@ function Header({ resetError, selectedCountry, handleCountryChange }) {
 
 Header.propTypes = {
   resetError: PropTypes.func.isRequired,
-};
+}
 
 export default Header

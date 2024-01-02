@@ -4,11 +4,14 @@
     font-size: 3em;
     display: flex;
     align-items: center;
-    background-color: grey;
+    background-color: white;
+    border-bottom: 2px solid black;
   }
   
-  .h1 {
-    font-size: 2em;
+  .logo {
+    font-size: 1.2em;
+    margin-left: .5em;
+    border-radius: 8px;
   }
   
   .home-link {
@@ -29,8 +32,8 @@
     color: white;
     font-size: 0.5em;
     font-weight: bolder;
-    margin-top: 3.95%;
-    margin-right: 10%;
+    margin-top: .7em;
+    margin-right: 1em;
   }
   
   .dropdown {
@@ -54,12 +57,6 @@
     animation: fadeIn 1s forwards;
   }
   
-  .logo {
-    font-size: 2em;
-    margin-right: 15px;
-    border-radius: 8px;
-  }
-  
   @media (max-width: 1350px) {
     .header {
       font-size: 2.5em;
@@ -68,7 +65,8 @@
       flex-direction: column;
     }
     .logo {
-      font-size: 1.5em;
+      font-size: 1.2em;
+      margin-top: 1em;
     }
     .dropdown {
       font-size: 0.6em;
@@ -83,5 +81,41 @@
     }
     100% {
       opacity: 1;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .header {
+      font-size: 2em;
+      text-align: center;
+      flex-direction: column;
+    }
+  
+    .logo {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+      margin-top: 1em;
+    }
+  
+    .dropdown {
+      font-size: 0.5em;
+      margin-top: 1em;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .header {
+      font-size: 1.5em;
+    }
+  
+    .logo {
+      font-size: 1.2em;
+      margin-bottom: 0.5em;
+      margin-top: 2em;
+    }
+  
+    .dropdown {
+      font-size: 0.6em;
+      margin-top: 0.5em;
     }
   }
