@@ -11,8 +11,8 @@ export async function getAllArticles() {
     }
 }
 
-export async function getTopArticles() {
-    let Url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=adce009eed63469b8050f78512e9a7bc'
+export async function getTopArticles(country) {
+    let Url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=adce009eed63469b8050f78512e9a7bc`
     try {
         const response = await fetch(Url)
         if (!response.ok) {

@@ -17,7 +17,7 @@
   }
   
   .dropdown, .fav-button-container {
-    width: 100px;
+    width: auto;
     height: 40px;
     border: none;
     display: flex;
@@ -45,7 +45,7 @@
   
   .dropdown:hover {
       transition: all 40ms cubic-bezier(.62, .1, .5, 1);
-      width: 180px;
+      width: auto;
   }
   
   .dropdown .long-text {
