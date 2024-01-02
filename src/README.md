@@ -2,12 +2,12 @@
 
 # News Reader
 
-![image](https://github.com/Board-Game-Buddy/BoardGameBuddy_UI/assets/130513948/01586ed2-defc-4639-b64b-b67695c9de4a)
+![image](https://github.com/prissilla-escobar/news_reader/assets/130513948/29b75558-07f0-4d22-9950-4ef27778ad43)
 
 </div>
 
 ## Abstract
-Enjoy reading top articles from the United States!
+Enjoy reading top articles from around the world! This application gives a user the opportunity to read the top stories from around the world for the current date. The user can use a drop down feature to filter by country. It is important to note that the article information will be in the language of the country selected.
 
 ### Contributors
 
@@ -21,9 +21,6 @@ Front End:
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) 
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
-</br>
-
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
 ### Goals
