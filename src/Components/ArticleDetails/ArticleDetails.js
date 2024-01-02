@@ -27,7 +27,9 @@ function ArticleDetails({ topArticles }) {
           <h2>{article.title}</h2>
           <h3>Published: {format(new Date(article.publishedAt), "MMMM dd, yyyy hh:mm a")}</h3>
           <h3>Source: {article.source.name}</h3>
-          <p>Read More HERE</p>
+          <p>{article.content}</p>
+          <p>{article.description}</p>
+          <Link to={`${article.url}`}><p>Read More HERE</p></Link>
         </div>
     )
 }

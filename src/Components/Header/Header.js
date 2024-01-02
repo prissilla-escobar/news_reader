@@ -1,12 +1,12 @@
 import './Header.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import PropTypes from "prop-types"
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 function Header({ resetError, selectedCountry, handleCountryChange }) {
   const [isHovered, setIsHovered] = useState(false)
-  const navigate = useNavigate()
-  const isHomePage = window.location.pathname === '/'
+  const location = useLocation()
+  const isHomePage = location.pathname === '/'
 
   const handleMouseEnter = () => {
     setIsHovered(true);
